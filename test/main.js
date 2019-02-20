@@ -3,5 +3,4 @@ const set = new Betterset();
 set.add(['Test 1', 2]);
 set.add(3);
 set.add({ name: 'Hello world' });
-const values = set.arrays();
-console.log(values);
+console.log(set.strings());
