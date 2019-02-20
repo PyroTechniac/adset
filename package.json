@@ -1,14 +1,15 @@
 {
     "name": "betterset",
     "author": "PyroTechniac <owenbellish@gmail.com>",
-    "main": "./src/index.js",
+    "main": "./index.js",
     "scripts": {
         "test": "node ./test/main.js"
     },
     "license": "Apache-2.0",
     "dependencies": {},
     "devDependencies": {
-        "eslint": "^5.14.1"
+        "eslint": "^5.14.1",
+        "jsdoc-to-markdown": "^4.0.1"
     },
     "optionalDependencies": {},
     "peerDependencies": {}
