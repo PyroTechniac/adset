@@ -12,5 +12,4 @@ set
     .add({ name: 'Test 1' })
     .add({ name: 'Test 2' })
     .add({ name: 'Test 3' });
-console.log(set);
-console.log(set.strings());
+console.log(set.access());

@@ -16,8 +16,30 @@ class Adset extends Set {
         super(iterator);
     }
 
+    /**
+     * Creates a new Map object containing the type of value as the key, and an array of every value
+     * as the value
+     * @returns {Map}
+     */
     access() {
-
+        const stringArray = new Array();
+        const numberArray = new Array();
+        const arrayArray = new Array();
+        const objectArray = new Array();
+        const stringSet = this.strings();
+        const numberSet = this.numbers();
+        const arraySet = this.arrays();
+        const objectSet = this.objects();
+        for (const val of stringSet) stringArray.push(val);
+        for (const val of numberSet) numberArray.push(val);
+        for (const val of arraySet) arrayArray.push(val);
+        for (const val of objectSet) objectArray.push(val);
+        const stringIterator = ['Strings', stringArray];
+        const numberIterator = ['Numbers', numberArray];
+        const arrayIterator = ['Arrays', arrayArray];
+        const objectIterator = ['Objects', objectArray];
+        const mainIterator = [stringIterator, numberIterator, arrayIterator, objectIterator];
+        return new Map(mainIterator);
     }
 
     /**
