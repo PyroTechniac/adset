@@ -5,12 +5,9 @@
     "scripts": {
         "test": "node ./test/main.js"
     },
-    "dependencies": {
-        "lodash": "^4.17.11"
-    },
+    "dependencies": {},
     "devDependencies": {
-        "eslint": "^5.14.1",
-        "jsdoc-to-markdown": "^4.0.1"
+        "eslint": "^5.14.1"
     },
     "optionalDependencies": {},
     "peerDependencies": {}
