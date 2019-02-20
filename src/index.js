@@ -3,8 +3,15 @@ const _ = require('lodash');
 const Err = require('./error');
 
 const pkgdata = require('../package.json');
-
+/**
+ * A Better Set with more utility methods
+ * @extends {Set}
+ */
 class Betterset extends Set {
+    /**
+     * Initializes a new Betterser
+     * @param {Iterator} iterator Any type of iterator
+     */
     constructor(iterator) {
         super(iterator);
     }

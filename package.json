@@ -1,11 +1,20 @@
 {
     "name": "betterset",
+    "version": "1.0.0",
     "author": "PyroTechniac <owenbellish@gmail.com>",
     "main": "./index.js",
     "scripts": {
-        "test": "node ./test/main.js"
+        "test": "node ./test/main.js",
+        "docs": "node ./docs/build.js"
     },
     "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PyroTechniac/betterset.git"
+    },
+    "bugs": {
+        "url": "https://github.com/PyroTechniac/betterset/issues"
+    },
     "dependencies": {},
     "devDependencies": {
         "eslint": "^5.14.1",
