@@ -1,5 +1,5 @@
 {
-    "name": "betterset",
+    "name": "adset",
     "version": "1.0.0",
     "author": "PyroTechniac <owenbellish@gmail.com>",
     "main": "./index.js",
@@ -10,10 +10,10 @@
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/PyroTechniac/betterset.git"
+        "url": "git+https://github.com/PyroTechniac/adset.git"
     },
     "bugs": {
-        "url": "https://github.com/PyroTechniac/betterset/issues"
+        "url": "https://github.com/PyroTechniac/adset/issues"
     },
     "dependencies": {},
     "devDependencies": {

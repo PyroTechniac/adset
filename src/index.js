@@ -7,7 +7,7 @@ const pkgdata = require('../package.json');
  * A Better Set with more utility methods
  * @extends {Set}
  */
-class Betterset extends Set {
+class Adset extends Set {
     /**
      * Initializes a new Betterser
      * @param {Iterator} iterator Any type of iterator
@@ -18,7 +18,7 @@ class Betterset extends Set {
 
     /**
      * Retrieves all the arrays in the set
-     * @returns {Betterset<Array>} All the arrays that are in the betterset
+     * @returns {Adset<Array>} All the arrays that are in the Adset
      */
     arrays() {
         const results = new this.constructor();
@@ -30,8 +30,8 @@ class Betterset extends Set {
 
     /**
      * Exactly the same as [`Set.clear()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear) but
-     * returns the old betterset instead of undefined
-     * @returns {Betterset<*>} The old set, can be discarded if not needed anymore
+     * returns the old Adset instead of undefined
+     * @returns {Adset<*>} The old set, can be discarded if not needed anymore
      */
     clear() {
         const set = new this.constructor(this);
@@ -40,21 +40,21 @@ class Betterset extends Set {
     }
 
     /**
-     * Combines this Betterset with others into a new Set. None of the Bettersets are modified
-     * @param {...Betterset} bettersets Bettersets to merge
-     * @returns {Betterset}
+     * Combines this Adset with others into a new Set. None of the Adsets are modified
+     * @param {...Adset} Adsets Adsets to merge
+     * @returns {Adset}
      * @example const newSet = someSet.concat(someOtherSet, anotherSet, ohBoyASet);
      */
-    concat(...bettersets) {
+    concat(...Adsets) {
         const newSet = this.clone();
-        for (const set of bettersets) {
+        for (const set of Adsets) {
             for (const val of set) newSet.add(val);
         }
     }
 
     /**
      * Retrieves all the strings in the set
-     * @returns {Betterset<String>} All the strings that are in the betterset
+     * @returns {Adset<String>} All the strings that are in the Adset
      */
     strings() {
         const results = new this.constructor();
@@ -66,7 +66,7 @@ class Betterset extends Set {
 
     /**
      * Retrieves all the objects in the set
-     * @returns {Betterset<Object>} All the objects that are in the betterset
+     * @returns {Adset<Object>} All the objects that are in the Adset
      */
     objects() {
         const results = new this.constructor();
@@ -78,7 +78,7 @@ class Betterset extends Set {
 
     /**
      * Retrieves all the numbers in the set
-     * @returns {Betterset<Number>} All the numbers that are in the betterset
+     * @returns {Adset<Number>} All the numbers that are in the Adset
      */
     numbers() {
         const results = new this.constructor();
@@ -90,10 +90,10 @@ class Betterset extends Set {
 
     /**
      * Exactly the same as [`Set.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach) but
-     * returns the betterset instead of undefined
+     * returns the Adset instead of undefined
      * @param {Function} fn The function to run
      * @param {*} [thisArg] The argument to use as `this`
-     * @returns {Betterset<*>} The set after the function was ran
+     * @returns {Adset<*>} The set after the function was ran
      */
     each(fn, thisArg) {
         this.forEach(fn, thisArg);
@@ -116,7 +116,7 @@ class Betterset extends Set {
 
     /**
      * Creates an identical copy of the Set
-     * @returns {Betterset}
+     * @returns {Adset}
      * @example const newSet = oldSet.clone();
      */
     clone() {
@@ -125,4 +125,4 @@ class Betterset extends Set {
 
 
 }
-module.exports = Betterset;
+module.exports = Adset;

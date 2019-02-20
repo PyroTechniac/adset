@@ -1,3 +1,3 @@
-const Betterset = require('./src/index');
+const Adset = require('./src/index');
 
-module.exports = Betterset;
+module.exports = Adset;

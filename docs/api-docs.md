@@ -1,26 +1,26 @@
-<a name="Betterset"></a>
+<a name="Adset"></a>
 
-## Betterset ⇐ <code>Set</code>
+## Adset ⇐ <code>Set</code>
 A Better Set with more utility methods
 
 **Kind**: global class  
 **Extends**: <code>Set</code>  
 
-* [Betterset](#Betterset) ⇐ <code>Set</code>
-    * [new Betterset(iterator)](#new_Betterset_new)
-    * [.arrays()](#Betterset+arrays) ⇒ <code>Betterset.&lt;Array&gt;</code>
-    * [.clear()](#Betterset+clear) ⇒ <code>Betterset.&lt;\*&gt;</code>
-    * [.concat(...bettersets)](#Betterset+concat) ⇒ [<code>Betterset</code>](#Betterset)
-    * [.strings()](#Betterset+strings) ⇒ <code>Betterset.&lt;String&gt;</code>
-    * [.objects()](#Betterset+objects) ⇒ <code>Betterset.&lt;Object&gt;</code>
-    * [.numbers()](#Betterset+numbers) ⇒ <code>Betterset.&lt;Number&gt;</code>
-    * [.each(fn, [thisArg])](#Betterset+each) ⇒ <code>Betterset.&lt;\*&gt;</code>
-    * [.map(fn, [thisArg])](#Betterset+map) ⇒ <code>Array.&lt;\*&gt;</code>
-    * [.clone()](#Betterset+clone) ⇒ [<code>Betterset</code>](#Betterset)
+* [Adset](#Adset) ⇐ <code>Set</code>
+    * [new Adset(iterator)](#new_Adset_new)
+    * [.arrays()](#Adset+arrays) ⇒ <code>Adset.&lt;Array&gt;</code>
+    * [.clear()](#Adset+clear) ⇒ <code>Adset.&lt;\*&gt;</code>
+    * [.concat(...Adsets)](#Adset+concat) ⇒ [<code>Adset</code>](#Adset)
+    * [.strings()](#Adset+strings) ⇒ <code>Adset.&lt;String&gt;</code>
+    * [.objects()](#Adset+objects) ⇒ <code>Adset.&lt;Object&gt;</code>
+    * [.numbers()](#Adset+numbers) ⇒ <code>Adset.&lt;Number&gt;</code>
+    * [.each(fn, [thisArg])](#Adset+each) ⇒ <code>Adset.&lt;\*&gt;</code>
+    * [.map(fn, [thisArg])](#Adset+map) ⇒ <code>Array.&lt;\*&gt;</code>
+    * [.clone()](#Adset+clone) ⇒ [<code>Adset</code>](#Adset)
 
-<a name="new_Betterset_new"></a>
+<a name="new_Adset_new"></a>
 
-### new Betterset(iterator)
+### new Adset(iterator)
 Initializes a new Betterser
 
 
@@ -28,75 +28,75 @@ Initializes a new Betterser
 | --- | --- | --- |
 | iterator | <code>Iterator</code> | Any type of iterator |
 
-<a name="Betterset+arrays"></a>
+<a name="Adset+arrays"></a>
 
-### betterset.arrays() ⇒ <code>Betterset.&lt;Array&gt;</code>
+### adset.arrays() ⇒ <code>Adset.&lt;Array&gt;</code>
 Retrieves all the arrays in the set
 
-**Kind**: instance method of [<code>Betterset</code>](#Betterset)  
-**Returns**: <code>Betterset.&lt;Array&gt;</code> - All the arrays that are in the betterset  
-<a name="Betterset+clear"></a>
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Adset.&lt;Array&gt;</code> - All the arrays that are in the Adset  
+<a name="Adset+clear"></a>
 
-### betterset.clear() ⇒ <code>Betterset.&lt;\*&gt;</code>
-Exactly the same as [`Set.clear()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear) butreturns the old betterset instead of undefined
+### adset.clear() ⇒ <code>Adset.&lt;\*&gt;</code>
+Exactly the same as [`Set.clear()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear) butreturns the old Adset instead of undefined
 
-**Kind**: instance method of [<code>Betterset</code>](#Betterset)  
-**Returns**: <code>Betterset.&lt;\*&gt;</code> - The old set, can be discarded if not needed anymore  
-<a name="Betterset+concat"></a>
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Adset.&lt;\*&gt;</code> - The old set, can be discarded if not needed anymore  
+<a name="Adset+concat"></a>
 
-### betterset.concat(...bettersets) ⇒ [<code>Betterset</code>](#Betterset)
-Combines this Betterset with others into a new Set. None of the Bettersets are modified
+### adset.concat(...Adsets) ⇒ [<code>Adset</code>](#Adset)
+Combines this Adset with others into a new Set. None of the Adsets are modified
 
-**Kind**: instance method of [<code>Betterset</code>](#Betterset)  
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...bettersets | [<code>Betterset</code>](#Betterset) | Bettersets to merge |
+| ...Adsets | [<code>Adset</code>](#Adset) | Adsets to merge |
 
 **Example**  
 ```js
 const newSet = someSet.concat(someOtherSet, anotherSet, ohBoyASet);
 ```
-<a name="Betterset+strings"></a>
+<a name="Adset+strings"></a>
 
-### betterset.strings() ⇒ <code>Betterset.&lt;String&gt;</code>
+### adset.strings() ⇒ <code>Adset.&lt;String&gt;</code>
 Retrieves all the strings in the set
 
-**Kind**: instance method of [<code>Betterset</code>](#Betterset)  
-**Returns**: <code>Betterset.&lt;String&gt;</code> - All the strings that are in the betterset  
-<a name="Betterset+objects"></a>
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Adset.&lt;String&gt;</code> - All the strings that are in the Adset  
+<a name="Adset+objects"></a>
 
-### betterset.objects() ⇒ <code>Betterset.&lt;Object&gt;</code>
+### adset.objects() ⇒ <code>Adset.&lt;Object&gt;</code>
 Retrieves all the objects in the set
 
-**Kind**: instance method of [<code>Betterset</code>](#Betterset)  
-**Returns**: <code>Betterset.&lt;Object&gt;</code> - All the objects that are in the betterset  
-<a name="Betterset+numbers"></a>
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Adset.&lt;Object&gt;</code> - All the objects that are in the Adset  
+<a name="Adset+numbers"></a>
 
-### betterset.numbers() ⇒ <code>Betterset.&lt;Number&gt;</code>
+### adset.numbers() ⇒ <code>Adset.&lt;Number&gt;</code>
 Retrieves all the numbers in the set
 
-**Kind**: instance method of [<code>Betterset</code>](#Betterset)  
-**Returns**: <code>Betterset.&lt;Number&gt;</code> - All the numbers that are in the betterset  
-<a name="Betterset+each"></a>
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Adset.&lt;Number&gt;</code> - All the numbers that are in the Adset  
+<a name="Adset+each"></a>
 
-### betterset.each(fn, [thisArg]) ⇒ <code>Betterset.&lt;\*&gt;</code>
-Exactly the same as [`Set.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach) butreturns the betterset instead of undefined
+### adset.each(fn, [thisArg]) ⇒ <code>Adset.&lt;\*&gt;</code>
+Exactly the same as [`Set.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach) butreturns the Adset instead of undefined
 
-**Kind**: instance method of [<code>Betterset</code>](#Betterset)  
-**Returns**: <code>Betterset.&lt;\*&gt;</code> - The set after the function was ran  
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Adset.&lt;\*&gt;</code> - The set after the function was ran  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | fn | <code>function</code> | The function to run |
 | [thisArg] | <code>\*</code> | The argument to use as `this` |
 
-<a name="Betterset+map"></a>
+<a name="Adset+map"></a>
 
-### betterset.map(fn, [thisArg]) ⇒ <code>Array.&lt;\*&gt;</code>
+### adset.map(fn, [thisArg]) ⇒ <code>Array.&lt;\*&gt;</code>
 Exactly the same as [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
-**Kind**: instance method of [<code>Betterset</code>](#Betterset)  
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
 **Returns**: <code>Array.&lt;\*&gt;</code> - The array after mapping  
 
 | Param | Type | Description |
@@ -104,12 +104,12 @@ Exactly the same as [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web
 | fn | <code>function</code> | Function that produces an element of the new array, taking two arguments |
 | [thisArg] | <code>\*</code> | The argument to use as `this` |
 
-<a name="Betterset+clone"></a>
+<a name="Adset+clone"></a>
 
-### betterset.clone() ⇒ [<code>Betterset</code>](#Betterset)
+### adset.clone() ⇒ [<code>Adset</code>](#Adset)
 Creates an identical copy of the Set
 
-**Kind**: instance method of [<code>Betterset</code>](#Betterset)  
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
 **Example**  
 ```js
 const newSet = oldSet.clone();
