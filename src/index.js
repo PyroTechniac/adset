@@ -29,6 +29,30 @@ class Betterset extends Set {
     }
 
     /**
+     * Exactly the same as [`Set.clear()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear) but
+     * returns the old betterset instead of undefined
+     * @returns {Betterset<*>} The old set, can be discarded if not needed anymore
+     */
+    clear() {
+        const set = new this.constructor(this);
+        super.clear();
+        return set;
+    }
+
+    /**
+     * Combines this Betterset with others into a new Set. None of the Bettersets are modified
+     * @param {...Betterset} bettersets Bettersets to merge
+     * @returns {Betterset}
+     * @example const newSet = someSet.concat(someOtherSet, anotherSet, ohBoyASet);
+     */
+    concat(...bettersets) {
+        const newSet = this.clone();
+        for (const set of bettersets) {
+            for (const val of set) newSet.add(val);
+        }
+    }
+
+    /**
      * Retrieves all the strings in the set
      * @returns {Betterset<String>} All the strings that are in the betterset
      */
@@ -50,17 +74,6 @@ class Betterset extends Set {
             if (val instanceof Object && val.constructor === Object) results.add(val);
         }
         return results;
-    }
-
-    /**
-     * Exactly the same as [`Set.clear()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear) but
-     * returns the old betterset instead of undefined
-     * @returns {Betterset<*>} The old set, can be discarded if not needed anymore
-     */
-    clear() {
-        const set = new this.constructor(this);
-        super.clear();
-        return set;
     }
 
     /**
@@ -110,17 +123,6 @@ class Betterset extends Set {
         return new this.constructor(this);
     }
 
-    /**
-     * Combines this Betterset with others into a new Set. None of the Bettersets are modified
-     * @param {...Betterset} bettersets Bettersets to merge
-     * @returns {Betterset}
-     * @example const newSet = someSet.concat(someOtherSet, anotherSet, ohBoyASet);
-     */
-    concat(...bettersets) {
-        const newSet = this.clone();
-        for (const set of bettersets) {
-            for (const val of set) newSet.add(val);
-        }
-    }
+
 }
 module.exports = Betterset;
