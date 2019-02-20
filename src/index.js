@@ -19,7 +19,7 @@ class Adset extends Set {
     /**
      * Creates a new Map object containing the type of value as the key, and an array of every value
      * as the value
-     * @returns {Map}
+     * @returns {Map<String, Array>} A map with the typeof value as the key, and an array of values as the value
      */
     access() {
         const stringArray = new Array();

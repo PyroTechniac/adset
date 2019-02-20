@@ -8,7 +8,7 @@ A Better Set with more utility methods
 
 * [Adset](#Adset) ⇐ <code>Set</code>
     * [new Adset(iterator)](#new_Adset_new)
-    * [.access()](#Adset+access) ⇒ <code>Map</code>
+    * [.access()](#Adset+access) ⇒ <code>Map.&lt;String, Array&gt;</code>
     * [.arrays()](#Adset+arrays) ⇒ <code>Adset.&lt;Array&gt;</code>
     * [.clear()](#Adset+clear) ⇒ <code>Adset.&lt;\*&gt;</code>
     * [.concat(...Adsets)](#Adset+concat) ⇒ [<code>Adset</code>](#Adset)
@@ -31,10 +31,11 @@ Initializes a new Betterser
 
 <a name="Adset+access"></a>
 
-### adset.access() ⇒ <code>Map</code>
+### adset.access() ⇒ <code>Map.&lt;String, Array&gt;</code>
 Creates a new Map object containing the type of value as the key, and an array of every valueas the value
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Map.&lt;String, Array&gt;</code> - A map with the typeof value as the key, and an array of values as the value  
 <a name="Adset+arrays"></a>
 
 ### adset.arrays() ⇒ <code>Adset.&lt;Array&gt;</code>
