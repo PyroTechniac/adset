@@ -16,6 +16,10 @@ class Adset extends Set {
         super(iterator);
     }
 
+    access() {
+
+    }
+
     /**
      * Retrieves all the arrays in the set
      * @returns {Adset<Array>} All the arrays that are in the Adset
@@ -59,7 +63,7 @@ class Adset extends Set {
     strings() {
         const results = new this.constructor();
         for (const val of this) {
-            if (val instanceof String) results.add(val);
+            if (val.constructor === String) results.add(val);
         }
         return results;
     }

@@ -4,7 +4,7 @@
     "author": "PyroTechniac <owenbellish@gmail.com>",
     "main": "./index.js",
     "scripts": {
-        "test": "jest",
+        "test": "node ./test/main.js",
         "docs": "node ./docs/build.js"
     },
     "license": "Apache-2.0",
