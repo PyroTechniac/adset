@@ -4,5 +4,6 @@ console.log(set._array);
 for (let i = 0; i < 100; i++) {
     set.add(`${i}`);
 }
-const rand = set.random(7);
+const rand = set.access();
 console.log(rand);
+console.log(rand.ready);
