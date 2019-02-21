@@ -29,7 +29,5 @@
         "jsdoc-to-markdown": "^4.0.1"
     },
     "optionalDependencies": {},
-    "peerDependencies": {
-        "better-sqlite-pool": "github:eslachance/better-sqlite-pool"
-    }
+    "peerDependencies": {}
 }
