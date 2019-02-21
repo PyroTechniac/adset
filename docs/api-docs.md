@@ -8,6 +8,7 @@ A Advanced Set structure with more utility methods
 
 * [Adset](#Adset) ⇐ <code>Set</code>
     * [new Adset([iterator])](#new_Adset_new)
+    * [.sealed](#Adset+sealed) : <code>Boolean</code>
     * [.access()](#Adset+access) ⇒ <code>Enmap.&lt;String, Array&gt;</code>
     * [.array()](#Adset+array) ⇒ <code>Array.&lt;\*&gt;</code>
     * [.arrays()](#Adset+arrays) ⇒ <code>Adset.&lt;Array&gt;</code>
@@ -25,6 +26,8 @@ A Advanced Set structure with more utility methods
     * [.clone()](#Adset+clone) ⇒ [<code>Adset</code>](#Adset)
     * [.random([amount])](#Adset+random) ⇒ <code>\*</code> \| <code>Array.&lt;\*&gt;</code>
     * [.get(key)](#Adset+get) ⇒ <code>\*</code>
+    * [.seal()](#Adset+seal) ⇒ <code>Adset.&lt;\*&gt;</code>
+    * [.break()](#Adset+break) ⇒ <code>Adset.&lt;\*&gt;</code>
 
 <a name="new_Adset_new"></a>
 
@@ -36,6 +39,12 @@ Initializes a new Adset
 | --- | --- | --- |
 | [iterator] | <code>Iterator</code> | Any type of iterator |
 
+<a name="Adset+sealed"></a>
+
+### adset.sealed : <code>Boolean</code>
+Whether the Adset is sealed or not, if true, the Adset cannot be modified in any way
+
+**Kind**: instance property of [<code>Adset</code>](#Adset)  
 <a name="Adset+access"></a>
 
 ### adset.access() ⇒ <code>Enmap.&lt;String, Array&gt;</code>
@@ -217,3 +226,17 @@ Returns a value from the first object in the Adset where the key is a key in the
 | --- | --- | --- |
 | key | <code>\*</code> | The key to grab the value from |
 
+<a name="Adset+seal"></a>
+
+### adset.seal() ⇒ <code>Adset.&lt;\*&gt;</code>
+Seals an Adset, preventing further modification in any way until unsealed with the [break](#Adset+break) method
+
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Adset.&lt;\*&gt;</code> - The Adset, after being sealed  
+<a name="Adset+break"></a>
+
+### adset.break() ⇒ <code>Adset.&lt;\*&gt;</code>
+Breaks a seal, allowing the Adset to be modified again, does nothing if the Adset wasn't sealed
+
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Adset.&lt;\*&gt;</code> - The Adset, after being unsealed  

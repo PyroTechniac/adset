@@ -21,6 +21,12 @@ class Adset extends Set {
          * @private
          */
         Object.defineProperty(this, '_array', { value: null, writable: true, configurable: true });
+
+        /**
+         * Whether the Adset is sealed or not, if true, the Adset cannot be modified in any way
+         * @type {Boolean}
+         */
+        this.sealed = false;
     }
 
     /**
@@ -59,11 +65,13 @@ class Adset extends Set {
     }
 
     add(val) {
+        if (this.sealed) throw new Err('The Adset is sealed, and cannot be modified', 'AdsetSealedError');
         this._array = null;
         return super.add(val);
     }
 
     delete(val) {
+        if (this.sealed) throw new Err('The Adset is sealed, and cannot be modified', 'AdsetSealedError');
         this._array = null;
         return super.delete(val);
     }
@@ -86,6 +94,7 @@ class Adset extends Set {
      * @returns {Adset<*>} The old set, can be discarded if not needed anymore
      */
     clear() {
+        if (this.sealed) throw new Err('The Adset is sealed, and cannot be modified', 'AdsetSealedError');
         const set = new this.constructor(this);
         super.clear();
         return set;
@@ -179,6 +188,7 @@ class Adset extends Set {
      * @returns {Adset<*>} The set after the function was ran
      */
     each(fn, thisArg) {
+        if (this.sealed) throw new Err('The Adset is sealed, and cannot be modified', 'AdsetSealedError');
         this.forEach(fn, thisArg);
         return this;
     }
@@ -263,6 +273,24 @@ class Adset extends Set {
             if (Object.keys(obj).includes(`${key}`)) return obj[`${key}`];
         }
         return undefined;
+    }
+
+    /**
+     * Seals an Adset, preventing further modification in any way until unsealed with the {@link Adset#break} method
+     * @returns {Adset<*>} The Adset, after being sealed
+     */
+    seal() {
+        this.sealed = true;
+        return this;
+    }
+
+    /**
+     * Breaks a seal, allowing the Adset to be modified again, does nothing if the Adset wasn't sealed
+     * @returns {Adset<*>} The Adset, after being unsealed
+     */
+    break() {
+        this.sealed = false;
+        return this;
     }
 }
 
