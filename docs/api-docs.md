@@ -24,6 +24,7 @@ A Advanced Set structure with more utility methods
     * [.map(fn, [thisArg])](#Adset+map) ⇒ <code>Array.&lt;\*&gt;</code>
     * [.clone()](#Adset+clone) ⇒ [<code>Adset</code>](#Adset)
     * [.random([amount])](#Adset+random) ⇒ <code>\*</code> \| <code>Array.&lt;\*&gt;</code>
+    * [.get(key)](#Adset+get) ⇒ <code>\*</code>
 
 <a name="new_Adset_new"></a>
 
@@ -203,4 +204,16 @@ Obtains unique random value(s) from the Adset, this relies on [array](#Adset+arr
 | Param | Type | Description |
 | --- | --- | --- |
 | [amount] | <code>number</code> | Amount of values to randomly obtain |
+
+<a name="Adset+get"></a>
+
+### adset.get(key) ⇒ <code>\*</code>
+Returns a value from the first object in the Adset where the key is a key in the object
+
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>\*</code> - The value that the first object held the key for  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | <code>\*</code> | The key to grab the value from |
 

@@ -1,9 +1,8 @@
 const Adset = require('../index');
 const set = new Adset();
-console.log(set._array);
-for (let i = 0; i < 100; i++) {
-    set.add(`${i}`);
+for (let i = 0; i < 10; i++) {
+    const obj = {};
+    obj[`${i}`] = i;
+    set.add(obj);
 }
-const rand = set.access();
-console.log(rand);
-console.log(rand.ready);
+console.log(set.get(4));

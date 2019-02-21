@@ -251,6 +251,19 @@ class Adset extends Set {
         for (let i = 0; i < amount; i++) rand[i] = arr.splice(Math.floor(Math.random() * arr.length), 1)[0];
         return rand;
     }
+
+    /**
+     * Returns a value from the first object in the Adset where the key is a key in the object
+     * @param {*} key The key to grab the value from
+     * @returns {*} The value that the first object held the key for
+     */
+    get(key) {
+        const objs = this.objects();
+        for (const obj of objs) {
+            if (Object.keys(obj).includes(`${key}`)) return obj[`${key}`];
+        }
+        return undefined;
+    }
 }
 
 module.exports = Adset;
