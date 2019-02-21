@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const Enmap = require('enmap');
 
 const Err = require('./error');
 
@@ -17,9 +17,9 @@ class Adset extends Set {
     }
 
     /**
-     * Creates a new Map object containing the type of value as the key, and an array of every value
+     * Creates a new {@link Enmap} object containing the type of value as the key, and an array of every value
      * as the value
-     * @returns {Map<String, Array>} A map with the typeof value as the key, and an array of values as the value
+     * @returns {Enmap<String, Array>} A map with the typeof value as the key, and an array of values as the value
      */
     access() {
         const stringArray = new Array();
@@ -39,8 +39,13 @@ class Adset extends Set {
         const arrayIterator = ['Arrays', arrayArray];
         const objectIterator = ['Objects', objectArray];
         const mainIterator = [stringIterator, numberIterator, arrayIterator, objectIterator];
-        return new Map(mainIterator);
+        return new Enmap(mainIterator);
     }
+
+    /**
+     * Returns an ordered array of all the values in this Adset
+     * @returns {Array<*>} An array of the values
+     */
 
     array() {
         const arr = [...this.values()];
