@@ -190,7 +190,9 @@ class Adset extends Set {
     clone() {
         return new this.constructor(this);
     }
-
-
 }
+/**
+ * @external Enmap
+ * @see {@link https://github.com/eslachance/enmap}
+ */
 module.exports = Adset;

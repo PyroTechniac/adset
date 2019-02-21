@@ -35,8 +35,7 @@ Initializes a new Betterser
 <a name="Adset+access"></a>
 
 ### adset.access() ⇒ <code>Enmap.&lt;String, Array&gt;</code>
-Creates a new [Enmap](Enmap) object containing the type of value as the key, and an array of every value
-as the value
+Creates a new [Enmap](Enmap) object containing the type of value as the key, and an array of every valueas the value
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
 **Returns**: <code>Enmap.&lt;String, Array&gt;</code> - A map with the typeof value as the key, and an array of values as the value  
@@ -57,8 +56,7 @@ Retrieves all the arrays in the set
 <a name="Adset+clear"></a>
 
 ### adset.clear() ⇒ <code>Adset.&lt;\*&gt;</code>
-Exactly the same as [`Set.clear()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear) but
-returns the old Adset instead of undefined
+Exactly the same as [`Set.clear()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/clear) butreturns the old Adset instead of undefined
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
 **Returns**: <code>Adset.&lt;\*&gt;</code> - The old set, can be discarded if not needed anymore  
@@ -68,8 +66,7 @@ returns the old Adset instead of undefined
 Obtains the first value(s) in the Adset
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
-**Returns**: <code>\*</code> \| <code>Array.&lt;\*&gt;</code> - A single value if no amount is provided, or an array of values, starting from
-the end if the amount is negative  
+**Returns**: <code>\*</code> \| <code>Array.&lt;\*&gt;</code> - A single value if no amount is provided, or an array of values, starting fromthe end if the amount is negative  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -81,8 +78,7 @@ the end if the amount is negative
 Obtains the last value(s) in the Adset. This relies on [array](#Adset+array)
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
-**Returns**: <code>\*</code> \| <code>Array.&lt;\*&gt;</code> - A single value if no amount is provided, or an array of values, starting from
-the beginning if the amount is negative  
+**Returns**: <code>\*</code> \| <code>Array.&lt;\*&gt;</code> - A single value if no amount is provided, or an array of values, starting fromthe beginning if the amount is negative  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -127,8 +123,7 @@ Retrieves all the numbers in the set
 <a name="Adset+each"></a>
 
 ### adset.each(fn, [thisArg]) ⇒ <code>Adset.&lt;\*&gt;</code>
-Exactly the same as [`Set.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach) but
-returns the Adset instead of undefined
+Exactly the same as [`Set.forEach()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach) butreturns the Adset instead of undefined
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
 **Returns**: <code>Adset.&lt;\*&gt;</code> - The set after the function was ran  

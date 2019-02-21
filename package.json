@@ -15,9 +15,10 @@
     "bugs": {
         "url": "https://github.com/PyroTechniac/adset/issues"
     },
-    "dependencies": {},
+    "dependencies": {
+        "enmap": "eslachance/enmap"
+    },
     "devDependencies": {
-        "enmap": "eslachance/enmap",
         "eslint": "^5.14.1",
         "eslint-config-airbnb-base": "^13.1.0",
         "eslint-config-standard": "^12.0.0",
@@ -28,5 +29,7 @@
         "jsdoc-to-markdown": "^4.0.1"
     },
     "optionalDependencies": {},
-    "peerDependencies": {}
+    "peerDependencies": {
+        "better-sqlite-pool": "github:eslachance/better-sqlite-pool"
+    }
 }
