@@ -46,7 +46,6 @@ class Adset extends Set {
      * Returns an ordered array of all the values in this Adset
      * @returns {Array<*>} An array of the values
      */
-
     array() {
         const arr = [...this.values()];
         return arr;
@@ -97,7 +96,6 @@ class Adset extends Set {
      * @returns {*|Array<*>} A single value if no amount is provided, or an array of values, starting from
      * the beginning if the amount is negative
      */
-
     last(amount) {
         const arr = this.array();
         if (typeof amount === 'undefined') return arr[arr.length - 1];
@@ -176,11 +174,27 @@ class Adset extends Set {
      * @returns {*} The argument found, undefined if nothing returned truthy
      */
     find(fn, thisArg) {
-        if (typeof thisArg === 'undefined') fn = fn.bind(thisArg);
+        if (typeof thisArg !== 'undefined') fn = fn.bind(thisArg);
         for (const val of this) {
-            if (fn(val, this)) return val;
+            if (fn(val, val, this)) return val;
         }
         return undefined;
+    }
+
+    /**
+     * Exactly the same as [`Array.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+     * but returns an Adset instead of an Array
+     * @param {Function} fn The function to execute (should return boolean)
+     * @param {*} [thisArg] Argument to use as `this`
+     * @returns {Adset<*>} The adset after the filter was ran
+     */
+    filter(fn, thisArg) {
+        if (typeof thisArg !== 'undefined') fn = fn.bind(thisArg);
+        const results = new this.constructor[Symbol.species]();
+        for (const val of this) {
+            if (fn(val, val, this)) results.add(val);
+        }
+        return results;
     }
 
     /**

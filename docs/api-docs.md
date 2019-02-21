@@ -20,6 +20,7 @@ A Advanced Set with more utility methods
     * [.numbers()](#Adset+numbers) ⇒ <code>Adset.&lt;Number&gt;</code>
     * [.each(fn, [thisArg])](#Adset+each) ⇒ <code>Adset.&lt;\*&gt;</code>
     * [.find(fn, [thisArg])](#Adset+find) ⇒ <code>\*</code>
+    * [.filter(fn, [thisArg])](#Adset+filter) ⇒ <code>Adset.&lt;\*&gt;</code>
     * [.map(fn, [thisArg])](#Adset+map) ⇒ <code>Array.&lt;\*&gt;</code>
     * [.clone()](#Adset+clone) ⇒ [<code>Adset</code>](#Adset)
 
@@ -141,6 +142,19 @@ Searches for a single value where a given function returns truthy, similar to[A
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
 **Returns**: <code>\*</code> - The argument found, undefined if nothing returned truthy  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| fn | <code>function</code> | The function to execute (should return boolean) |
+| [thisArg] | <code>\*</code> | Argument to use as `this` |
+
+<a name="Adset+filter"></a>
+
+### adset.filter(fn, [thisArg]) ⇒ <code>Adset.&lt;\*&gt;</code>
+Exactly the same as [`Array.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)but returns an Adset instead of an Array
+
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>Adset.&lt;\*&gt;</code> - The adset after the filter was ran  
 
 | Param | Type | Description |
 | --- | --- | --- |
