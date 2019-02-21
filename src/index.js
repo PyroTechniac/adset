@@ -14,6 +14,13 @@ class Adset extends Set {
      */
     constructor(iterator) {
         super(iterator);
+        /**
+         * Cached array for the `array()` method, will be reset to null whenever `add()` or `delete()` are called
+         * @name Adset#_array
+         * @type {?Array}
+         * @private
+         */
+        Object.defineProperty(this, '_array', { value: null, writable: true, configurable: true });
     }
 
     /**
@@ -47,8 +54,18 @@ class Adset extends Set {
      * @returns {Array<*>} An array of the values
      */
     array() {
-        const arr = [...this.values()];
-        return arr;
+        if (!this._array || this._array.length !== this.size) this._array = [...this.values()];
+        return this._array;
+    }
+
+    add(val) {
+        this._array = null;
+        return super.add(val);
+    }
+
+    delete(val) {
+        this._array = null;
+        return super.delete(val);
     }
 
     /**
