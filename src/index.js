@@ -33,7 +33,7 @@ class Adset extends Set {
     /**
      * Creates a new {@link https://github.com/eslachance/enmap Enmap} object containing the type of value as the key, and an array of every value
      * as the value
-     * @returns {Enmap<String, Array>} A map with the typeof value as the key, and an array of values as the value
+     * @returns {Enmap<String, Array<*>>} A map with the typeof value as the key, and an array of values as the value
      */
     access() {
         const stringArray = new Array();

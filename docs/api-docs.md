@@ -8,8 +8,7 @@ A Advanced Set structure with more utility methods
 
 * [Adset](#Adset) ⇐ <code>Set</code>
     * [new Adset([iterator])](#new_Adset_new)
-    * [.sealed](#Adset+sealed) : <code>Boolean</code>
-    * [.access()](#Adset+access) ⇒ <code>Enmap.&lt;String, Array&gt;</code>
+    * [.access()](#Adset+access) ⇒ <code>Enmap.&lt;String, Array.&lt;\*&gt;&gt;</code>
     * [.array()](#Adset+array) ⇒ <code>Array.&lt;\*&gt;</code>
     * [.arrays()](#Adset+arrays) ⇒ <code>Adset.&lt;Array&gt;</code>
     * [.clear()](#Adset+clear) ⇒ <code>Adset.&lt;\*&gt;</code>
@@ -39,20 +38,14 @@ Initializes a new Adset
 | --- | --- | --- |
 | [iterator] | <code>Iterator</code> | Any type of iterator |
 
-<a name="Adset+sealed"></a>
-
-### adset.sealed : <code>Boolean</code>
-Whether the Adset is sealed or not, if true, the Adset cannot be modified in any way
-
-**Kind**: instance property of [<code>Adset</code>](#Adset)  
 <a name="Adset+access"></a>
 
-### adset.access() ⇒ <code>Enmap.&lt;String, Array&gt;</code>
+### adset.access() ⇒ <code>Enmap.&lt;String, Array.&lt;\*&gt;&gt;</code>
 Creates a new [Enmap](https://github.com/eslachance/enmap) object containing the type of value as the key, and an array of every value
 as the value
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
-**Returns**: <code>Enmap.&lt;String, Array&gt;</code> - A map with the typeof value as the key, and an array of values as the value  
+**Returns**: <code>Enmap.&lt;String, Array.&lt;\*&gt;&gt;</code> - A map with the typeof value as the key, and an array of values as the value  
 <a name="Adset+array"></a>
 
 ### adset.array() ⇒ <code>Array.&lt;\*&gt;</code>
