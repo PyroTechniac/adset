@@ -236,6 +236,21 @@ class Adset extends Set {
     clone() {
         return new this.constructor(this);
     }
+
+    /**
+     * Obtains unique random value(s) from the Adset, this relies on {@link Adset#array}
+     * @param {number} [amount] Amount of values to randomly obtain
+     * @returns {*|Array<*>} A single value if no amount is provided or an array of values
+     */
+    random(amount) {
+        let arr = this.array();
+        if (typeof amount === 'undefined') return arr[Math.floor(Math.random() * arr.length)];
+        if (arr.length === 0 || !amount) return [];
+        const rand = new Array(amount);
+        arr = arr.slice();
+        for (let i = 0; i < amount; i++) rand[i] = arr.splice(Math.floor(Math.random() * arr.length), 1)[0];
+        return rand;
+    }
 }
 
 module.exports = Adset;
