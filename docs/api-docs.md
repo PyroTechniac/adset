@@ -1,7 +1,7 @@
 <a name="Adset"></a>
 
 ## Adset ⇐ <code>Set</code>
-A Advanced Set with more utility methods
+A Advanced Set structure with more utility methods
 
 **Kind**: global class  
 **Extends**: <code>Set</code>  

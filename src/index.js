@@ -4,7 +4,7 @@ const Err = require('./error');
 
 const pkgdata = require('../package.json');
 /**
- * A Advanced Set with more utility methods
+ * A Advanced Set structure with more utility methods
  * @extends {Set}
  */
 class Adset extends Set {
