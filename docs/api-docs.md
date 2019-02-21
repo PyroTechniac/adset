@@ -7,7 +7,7 @@ A Advanced Set with more utility methods
 **Extends**: <code>Set</code>  
 
 * [Adset](#Adset) ⇐ <code>Set</code>
-    * [new Adset(iterator)](#new_Adset_new)
+    * [new Adset([iterator])](#new_Adset_new)
     * [.access()](#Adset+access) ⇒ <code>Enmap.&lt;String, Array&gt;</code>
     * [.array()](#Adset+array) ⇒ <code>Array.&lt;\*&gt;</code>
     * [.arrays()](#Adset+arrays) ⇒ <code>Adset.&lt;Array&gt;</code>
@@ -26,13 +26,13 @@ A Advanced Set with more utility methods
 
 <a name="new_Adset_new"></a>
 
-### new Adset(iterator)
+### new Adset([iterator])
 Initializes a new Adset
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| iterator | <code>Iterator</code> | Any type of iterator |
+| [iterator] | <code>Iterator</code> | Any type of iterator |
 
 <a name="Adset+access"></a>
 

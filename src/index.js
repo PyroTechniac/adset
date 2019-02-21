@@ -10,7 +10,7 @@ const pkgdata = require('../package.json');
 class Adset extends Set {
     /**
      * Initializes a new Adset
-     * @param {Iterator} iterator Any type of iterator
+     * @param {Iterator} [iterator] Any type of iterator
      */
     constructor(iterator) {
         super(iterator);
