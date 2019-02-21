@@ -42,6 +42,11 @@ class Adset extends Set {
         return new Map(mainIterator);
     }
 
+    array() {
+        const arr = [...this.values()];
+        return arr;
+    }
+
     /**
      * Retrieves all the arrays in the set
      * @returns {Adset<Array>} All the arrays that are in the Adset
@@ -63,6 +68,37 @@ class Adset extends Set {
         const set = new this.constructor(this);
         super.clear();
         return set;
+    }
+
+    /**
+     * Obtains the first value(s) in the Adset
+     * @param {number} [amount] Amount of values to obtain from the beginning
+     * @returns {*|Array<*>} A single value if no amount is provided, or an array of values, starting from
+     * the end if the amount is negative
+     */
+    first(amount) {
+        if (typeof amount === 'undefined') return this.values().next().value;
+        if (amount < 0) return this.last(amount * -1);
+        amount = Math.min(this.size, amount);
+        const arr = new Array(amount);
+        const iter = this.values();
+        for (let i = 0; i < amount; i++) arr[i] = iter.next().value;
+        return arr;
+    }
+
+    /**
+     * Obtains the last value(s) in the Adset. This relies on {@link Adset#array}
+     * @param {number} [amount] Amount of values to obtain from the end
+     * @returns {*|Array<*>} A single value if no amount is provided, or an array of values, starting from
+     * the beginning if the amount is negative
+     */
+
+    last(amount) {
+        const arr = this.array();
+        if (typeof amount === 'undefined') return arr[arr.length - 1];
+        if (amount < 0) return this.first(amount * -1);
+        if (!amount) return [];
+        return arr.slice(-amount);
     }
 
     /**

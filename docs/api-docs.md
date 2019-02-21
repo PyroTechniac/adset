@@ -11,6 +11,8 @@ A Better Set with more utility methods
     * [.access()](#Adset+access) ⇒ <code>Map.&lt;String, Array&gt;</code>
     * [.arrays()](#Adset+arrays) ⇒ <code>Adset.&lt;Array&gt;</code>
     * [.clear()](#Adset+clear) ⇒ <code>Adset.&lt;\*&gt;</code>
+    * [.first([amount])](#Adset+first) ⇒ <code>\*</code> \| <code>Array.&lt;\*&gt;</code>
+    * [.last([amount])](#Adset+last) ⇒ <code>\*</code> \| <code>Array.&lt;\*&gt;</code>
     * [.concat(...Adsets)](#Adset+concat) ⇒ [<code>Adset</code>](#Adset)
     * [.strings()](#Adset+strings) ⇒ <code>Adset.&lt;String&gt;</code>
     * [.objects()](#Adset+objects) ⇒ <code>Adset.&lt;Object&gt;</code>
@@ -50,6 +52,30 @@ Exactly the same as [`Set.clear()`](https://developer.mozilla.org/en-US/docs/Web
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
 **Returns**: <code>Adset.&lt;\*&gt;</code> - The old set, can be discarded if not needed anymore  
+<a name="Adset+first"></a>
+
+### adset.first([amount]) ⇒ <code>\*</code> \| <code>Array.&lt;\*&gt;</code>
+Obtains the first value(s) in the Adset
+
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>\*</code> \| <code>Array.&lt;\*&gt;</code> - A single value if no amount is provided, or an array of values, starting fromthe end if the amount is negative  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [amount] | <code>number</code> | Amount of values to obtain from the beginning |
+
+<a name="Adset+last"></a>
+
+### adset.last([amount]) ⇒ <code>\*</code> \| <code>Array.&lt;\*&gt;</code>
+Obtains the last value(s) in the Adset. This relies on [Adset#array](Adset#array)
+
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>\*</code> \| <code>Array.&lt;\*&gt;</code> - A single value if no amount is provided, or an array of values, starting fromthe beginning if the amount is negative  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [amount] | <code>number</code> | Amount of values to obtain from the end |
+
 <a name="Adset+concat"></a>
 
 ### adset.concat(...Adsets) ⇒ [<code>Adset</code>](#Adset)
