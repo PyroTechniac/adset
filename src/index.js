@@ -169,6 +169,21 @@ class Adset extends Set {
     }
 
     /**
+     * Searches for a single value where a given function returns truthy, similar to
+     * [Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+     * @param {Function} fn The function to execute (should return boolean)
+     * @param {*} [thisArg] Argument to use as `this`
+     * @returns {*} The argument found, undefined if nothing returned truthy
+     */
+    find(fn, thisArg) {
+        if (typeof thisArg === 'undefined') fn = fn.bind(thisArg);
+        for (const val of this) {
+            if (fn(val, this)) return val;
+        }
+        return undefined;
+    }
+
+    /**
      * Exactly the same as [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
      * @param {Function} fn Function that produces an element of the new array, taking two arguments
      * @param {*} [thisArg] The argument to use as `this`
@@ -191,8 +206,5 @@ class Adset extends Set {
         return new this.constructor(this);
     }
 }
-/**
- * @external Enmap
- * @see {@link https://github.com/eslachance/enmap}
- */
+
 module.exports = Adset;

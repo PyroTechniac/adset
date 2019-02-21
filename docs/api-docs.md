@@ -19,6 +19,7 @@ A Advanced Set with more utility methods
     * [.objects()](#Adset+objects) ⇒ <code>Adset.&lt;Object&gt;</code>
     * [.numbers()](#Adset+numbers) ⇒ <code>Adset.&lt;Number&gt;</code>
     * [.each(fn, [thisArg])](#Adset+each) ⇒ <code>Adset.&lt;\*&gt;</code>
+    * [.find(fn, [thisArg])](#Adset+find) ⇒ <code>\*</code>
     * [.map(fn, [thisArg])](#Adset+map) ⇒ <code>Array.&lt;\*&gt;</code>
     * [.clone()](#Adset+clone) ⇒ [<code>Adset</code>](#Adset)
 
@@ -132,6 +133,19 @@ Exactly the same as [`Set.forEach()`](https://developer.mozilla.org/en-US/docs/W
 | --- | --- | --- |
 | fn | <code>function</code> | The function to run |
 | [thisArg] | <code>\*</code> | The argument to use as `this` |
+
+<a name="Adset+find"></a>
+
+### adset.find(fn, [thisArg]) ⇒ <code>\*</code>
+Searches for a single value where a given function returns truthy, similar to[Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+
+**Kind**: instance method of [<code>Adset</code>](#Adset)  
+**Returns**: <code>\*</code> - The argument found, undefined if nothing returned truthy  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| fn | <code>function</code> | The function to execute (should return boolean) |
+| [thisArg] | <code>\*</code> | Argument to use as `this` |
 
 <a name="Adset+map"></a>
 
