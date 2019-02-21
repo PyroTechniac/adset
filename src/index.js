@@ -112,6 +112,7 @@ class Adset extends Set {
         for (const set of Adsets) {
             for (const val of set) newSet.add(val);
         }
+        return newSet;
     }
 
     /**
