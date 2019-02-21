@@ -25,8 +25,9 @@ class Adset extends Set {
         /**
          * Whether the Adset is sealed or not, if true, the Adset cannot be modified in any way
          * @type {Boolean}
+         * @private
          */
-        this.sealed = false;
+        Object.defineProperty(this, 'sealed', { value: false, writable: true, configurable: false });
     }
 
     /**
