@@ -4,12 +4,12 @@ const Err = require('./error');
 
 const pkgdata = require('../package.json');
 /**
- * A Better Set with more utility methods
+ * A Advanced Set with more utility methods
  * @extends {Set}
  */
 class Adset extends Set {
     /**
-     * Initializes a new Betterser
+     * Initializes a new Adset
      * @param {Iterator} iterator Any type of iterator
      */
     constructor(iterator) {
@@ -17,7 +17,7 @@ class Adset extends Set {
     }
 
     /**
-     * Creates a new {@link Enmap} object containing the type of value as the key, and an array of every value
+     * Creates a new {@link https://github.com/eslachance/enmap Enmap} object containing the type of value as the key, and an array of every value
      * as the value
      * @returns {Enmap<String, Array>} A map with the typeof value as the key, and an array of values as the value
      */

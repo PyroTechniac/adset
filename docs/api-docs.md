@@ -1,7 +1,7 @@
 <a name="Adset"></a>
 
 ## Adset ⇐ <code>Set</code>
-A Better Set with more utility methods
+A Advanced Set with more utility methods
 
 **Kind**: global class  
 **Extends**: <code>Set</code>  
@@ -25,7 +25,7 @@ A Better Set with more utility methods
 <a name="new_Adset_new"></a>
 
 ### new Adset(iterator)
-Initializes a new Betterser
+Initializes a new Adset
 
 
 | Param | Type | Description |
@@ -35,7 +35,7 @@ Initializes a new Betterser
 <a name="Adset+access"></a>
 
 ### adset.access() ⇒ <code>Enmap.&lt;String, Array&gt;</code>
-Creates a new [Enmap](Enmap) object containing the type of value as the key, and an array of every valueas the value
+Creates a new [Enmap](https://github.com/eslachance/enmap) object containing the type of value as the key, and an array of every valueas the value
 
 **Kind**: instance method of [<code>Adset</code>](#Adset)  
 **Returns**: <code>Enmap.&lt;String, Array&gt;</code> - A map with the typeof value as the key, and an array of values as the value  
