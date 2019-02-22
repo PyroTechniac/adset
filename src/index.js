@@ -54,7 +54,6 @@ class Adset extends Set {
      * @returns {Map<String, Array<*>>} A map with the typeof value as the key, and an array of values as the value
      */
     access() {
-        if (this.sealed) throw new Err('The Adset is sealed, and cannot be modified', 'AdsetSealedError');
         const stringArray = new Array();
         const numberArray = new Array();
         const arrayArray = new Array();
