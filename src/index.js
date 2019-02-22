@@ -36,6 +36,7 @@ class Adset extends Set {
      * @returns {Enmap<String, Array<*>>} A map with the typeof value as the key, and an array of values as the value
      */
     access() {
+        if (this.sealed) throw new Err('The Adset is sealed, and cannot be modified', 'AdsetSealedError');
         const stringArray = new Array();
         const numberArray = new Array();
         const arrayArray = new Array();
@@ -86,6 +87,7 @@ class Adset extends Set {
         for (const val of this) {
             if (val instanceof Array) results.add(val);
         }
+        if (this.sealed) results.seal();
         return results;
     }
 
@@ -142,6 +144,7 @@ class Adset extends Set {
         for (const set of Adsets) {
             for (const val of set) newSet.add(val);
         }
+        if (this.sealed) newSet.seal();
         return newSet;
     }
 
@@ -154,6 +157,7 @@ class Adset extends Set {
         for (const val of this) {
             if (val.constructor === String) results.add(val);
         }
+        if (this.sealed) results.seal();
         return results;
     }
 
@@ -166,6 +170,7 @@ class Adset extends Set {
         for (const val of this) {
             if (val instanceof Object && val.constructor === Object) results.add(val);
         }
+        if (this.sealed) results.seal();
         return results;
     }
 
@@ -178,6 +183,7 @@ class Adset extends Set {
         for (const val of this) {
             if (typeof val === 'number') results.add(val);
         }
+        if (this.sealed) results.seal();
         return results;
     }
 
@@ -222,6 +228,7 @@ class Adset extends Set {
         for (const val of this) {
             if (fn(val, val, this)) results.add(val);
         }
+        if (this.sealed) results.seal();
         return results;
     }
 
@@ -245,7 +252,9 @@ class Adset extends Set {
      * @example const newSet = oldSet.clone();
      */
     clone() {
-        return new this.constructor(this);
+        const results = new this.constructor(this);
+        if (this.sealed) results.seal();
+        return results;
     }
 
     /**
