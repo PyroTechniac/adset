@@ -49,7 +49,51 @@ class Adset extends Set {
     }
 
     /**
-     * Creates a new Map object containing the type of value as the key, and an array of every value
+     * Creates a new Map object containing the type of value(s) as the key, and an object ordering them
+     * by insertion with the key as the number, and the value as an array with the number in the original
+     * set, and the actual value
+     * @returns {Map<String, Object<String, Array>>} The Map mentioned above
+     */
+    parse() {
+        const newArr = Array.from(this).map((element, index) => {
+            return [index, element];
+        });
+        let stringCount = 0;
+        let numberCount = 0;
+        let arrayCount = 0;
+        let objectCount = 0;
+        const stringObj = {};
+        const numberObj = {};
+        const arrayObj = {};
+        const objectObj = {};
+        for (const arr of newArr) {
+            if (arr[1].constructor === String) {
+                stringObj[stringCount] = arr;
+                stringCount++;
+            }
+            if (arr[1].constructor === Number) {
+                numberObj[numberCount] = arr;
+                numberCount++;
+            }
+            if (arr[1].constructor === Array) {
+                arrayObj[arrayCount] = arr;
+                arrayCount++;
+            }
+            if (arr[1].constructor === Object) {
+                objectObj[objectCount] = arr;
+                objectCount++;
+            }
+        }
+        const stringIterator = ['Strings', stringObj];
+        const numberIterator = ['Numbers', numberObj];
+        const arrayIterator = ['Arrays', arrayObj];
+        const objectIterator = ['Objects', objectObj];
+        const mainIterator = [stringIterator, numberIterator, arrayIterator, objectIterator];
+        return new Map(mainIterator);
+    }
+
+    /**
+     * Creates a new Map object containing the type of value(s) as the key, and an array of every value
      * as the value
      * @returns {Map<String, Array<*>>} A map with the typeof value as the key, and an array of values as the value
      */
