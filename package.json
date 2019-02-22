@@ -15,9 +15,7 @@
     "bugs": {
         "url": "https://github.com/PyroTechniac/adset/issues"
     },
-    "dependencies": {
-        "enmap": "eslachance/enmap"
-    },
+    "dependencies": {},
     "devDependencies": {
         "eslint": "^5.14.1",
         "eslint-config-airbnb-base": "^13.1.0",

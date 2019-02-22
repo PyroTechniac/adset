@@ -1,10 +1,12 @@
 const Adset = require('../index');
 const set = new Adset();
 for (let i = 0; i < 10; i++) {
-    set.add(i);
+    set.add(`Test ${i}`);
 }
-set.seal();
-console.log(set);
-set.break();
-set.clear();
-console.log(set);
+const map = set.access();
+const obj = Array.from(map).reduce((main, [key, value]) => {
+    main[key] = value;
+    return main;
+}, {});
+
+console.log(obj);

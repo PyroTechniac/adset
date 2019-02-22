@@ -1,7 +1,5 @@
-const Enmap = require('enmap');
-
 const Err = require('./error');
-
+const fs = require('fs');
 const pkgdata = require('../package.json');
 /**
  * A Advanced Set structure with more utility methods
@@ -31,9 +29,9 @@ class Adset extends Set {
     }
 
     /**
-     * Creates a new {@link https://github.com/eslachance/enmap Enmap} object containing the type of value as the key, and an array of every value
+     * Creates a new Map object containing the type of value as the key, and an array of every value
      * as the value
-     * @returns {Enmap<String, Array<*>>} A map with the typeof value as the key, and an array of values as the value
+     * @returns {Map<String, Array<*>>} A map with the typeof value as the key, and an array of values as the value
      */
     access() {
         if (this.sealed) throw new Err('The Adset is sealed, and cannot be modified', 'AdsetSealedError');
@@ -54,7 +52,7 @@ class Adset extends Set {
         const arrayIterator = ['Arrays', arrayArray];
         const objectIterator = ['Objects', objectArray];
         const mainIterator = [stringIterator, numberIterator, arrayIterator, objectIterator];
-        return new Enmap(mainIterator);
+        return new Map(mainIterator);
     }
 
     /**
