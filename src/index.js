@@ -28,6 +28,10 @@ class Adset extends Set {
         Object.defineProperty(this, 'sealed', { value: false, writable: true, configurable: false });
     }
 
+    store() {
+        // Coming soon
+    }
+
     /**
      * Creates a new Map object containing the type of value as the key, and an array of every value
      * as the value
