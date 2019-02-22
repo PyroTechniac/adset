@@ -1,5 +1,7 @@
 const Err = require('./error');
 const fs = require('fs');
+const nextra = require('fs-nextra');
+const path = require('path');
 const pkgdata = require('../package.json');
 /**
  * A Advanced Set structure with more utility methods
@@ -28,8 +30,22 @@ class Adset extends Set {
         Object.defineProperty(this, 'sealed', { value: false, writable: true, configurable: false });
     }
 
+    /**
+     * Stores the data in the set, while calling the `access()` method. This means that the data should **not** be
+     * sealed
+     * <warn> This writes to a JSON file, and should not be used often, as JSON files are prone to corruption when written
+     * and read from repeatedly</warn>
+     * @returns {Object} The JSON Object that was written to the file
+     */
     store() {
-        // Coming soon
+        const map = this.access();
+        const obj = Array.from(map).reduce((main, [key, value]) => {
+            main[key] = value;
+            return main;
+        }, {});
+        const dataDir = path.resolve(process.cwd(), 'data.json');
+        nextra.writeJSONAtomic(dataDir, obj, () => null);
+        return obj;
     }
 
     /**

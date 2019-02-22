@@ -15,7 +15,9 @@
     "bugs": {
         "url": "https://github.com/PyroTechniac/adset/issues"
     },
-    "dependencies": {},
+    "dependencies": {
+        "fs-nextra": "^0.4.3"
+    },
     "devDependencies": {
         "eslint": "^5.14.1",
         "eslint-config-airbnb-base": "^13.1.0",
