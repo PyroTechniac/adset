@@ -1,6 +1,6 @@
 {
     "name": "adset",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "PyroTechniac <owenbellish@gmail.com>",
     "main": "./index.js",
     "scripts": {
